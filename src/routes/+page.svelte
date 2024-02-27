@@ -2,8 +2,6 @@
 	import { supabase } from '$lib/supabase';
 
 	let promise = supabase.from('countries').select();
-
-	let countries = supabase.from('countries').select();
 </script>
 
 {#await promise}
