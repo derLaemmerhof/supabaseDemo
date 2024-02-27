@@ -2,10 +2,16 @@
 	import { supabase } from '$lib/supabase';
 
 	let promise = supabase.from('countries').select();
+
+	let countries = supabase.from('countries').select();
 </script>
 
 {#await promise}
-	<div>...loading loader einfügen</div>
+	<span class="loading loading-ball loading-lg" />
 {:then result}
-	<div>{JSON.stringify(result)}</div>
+	<ul>
+		{#each result.data as country}
+			<li>{country.name}</li>
+		{/each}
+	</ul>
 {/await}
