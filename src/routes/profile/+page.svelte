@@ -68,26 +68,31 @@
 	}
 </script>
 
-{#if $session}
-	<form on:submit|preventDefault={updateProfile} class="form-widget">
-		<div>Email: {$session.user.email}</div>
-		<div>
-			<label for="username">Name</label>
-			<input id="username" type="text" bind:value={username} />
-		</div>
-		<div>
-			<label for="website">Website</label>
-			<input id="website" type="text" bind:value={website} />
-		</div>
-		<div>
-			<button type="submit" class="button primary block" disabled={loading}>
-				{loading ? 'Saving ...' : 'Update profile'}
-			</button>
-		</div>
-		<button type="button" class="button block" on:click={() => supabase.auth.signOut()}>
-			Sign Out
-		</button>
-	</form>
-{:else}
-	<div>seems you are not logged in</div>
-{/if}
+<div class="card w-96 bg-neutral text-neutral-content">
+	<div class="card-body items-center text-center">
+		<h2 class="card-title">Cookies!</h2>
+		{#if $session}
+			<form on:submit|preventDefault={updateProfile} class="form-widget">
+				<div>Email: {$session.user.email}</div>
+				<div>
+					<label for="username">Name</label>
+					<input id="username" type="text" bind:value={username} />
+				</div>
+				<div>
+					<label for="website">Website</label>
+					<input id="website" type="text" bind:value={website} />
+				</div>
+				<div>
+					<button type="submit" class="button primary block" disabled={loading}>
+						{loading ? 'Saving ...' : 'Update profile'}
+					</button>
+				</div>
+				<button type="button" class="button block" on:click={() => supabase.auth.signOut()}>
+					Sign Out
+				</button>
+			</form>
+		{:else}
+			<div>seems you are not logged in</div>
+		{/if}
+	</div>
+</div>
