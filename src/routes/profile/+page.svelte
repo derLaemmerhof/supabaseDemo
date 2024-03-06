@@ -69,8 +69,7 @@
 </script>
 
 <div class="card w-96 bg-neutral text-neutral-content">
-	<div class="card-body items-center text-center">
-		<h2 class="card-title">Cookies!</h2>
+	<div class="card-body items-center text-left">
 		{#if $session}
 			<form on:submit|preventDefault={updateProfile} class="form-widget">
 				<div>Email: {$session.user.email}</div>

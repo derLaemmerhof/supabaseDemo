@@ -22,8 +22,7 @@
 </script>
 
 <div class="card w-96 bg-neutral text-neutral-content">
-	<div class="card-body items-center text-center">
-		<h2 class="card-title">Cookies!</h2>
+	<div class="card-body items-center text-left">
 		<div class="row flex-center flex">
 			<div class="col-6 form-widget" aria-live="polite">
 				<h1 class="header">Supabase + Svelte</h1>
